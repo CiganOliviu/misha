@@ -5,15 +5,11 @@ sys.path.insert(0, 'dependencies/')
 
 from dependencies.create_datasets import create_dataset, dataset_type, dataset_workflow
 
-class misha_datasets_system(object):
-    def __init__(self, arg):
+class misha_datasets_system():
+    def __init__(self):
         super(misha_datasets_system, self).__init__()
 
-    @click.group()
-    def datasets():
-        pass
-
-    @datasets.command()
+    @click.command()
     @click.option('--file_name', help='Path where the dataset should be created and the file name')
     @click.option('--dataset_size', default=0, help='The size of the dataset')
     @click.option('--min_limit', default=0, help='The start point of generating values')
@@ -27,7 +23,7 @@ class misha_datasets_system(object):
         dataset_init = create_dataset ()
         dataset_init.auto_create_float_list_dataset (dataset_info)
 
-    @datasets.command()
+    @click.command()
     @click.option('--file_name', help='Path where the dataset should be created and the file name')
     @click.option('--dataset_size', default=0, help='The size of the dataset')
     @click.option('--min_limit', default=0, help='The start point of generating values')
@@ -41,7 +37,7 @@ class misha_datasets_system(object):
         dataset_init = create_dataset ()
         dataset_init.auto_create_integer_list_dataset (dataset_info)
 
-    @datasets.command()
+    @click.command()
     @click.option('--file_name', help='Path where the dataset should be created and the file name')
     @click.option('--dataset_size', default=0, help='The size of the dataset')
     @click.option('--min_limit', default=0, help='The start point of generating values')
@@ -55,7 +51,7 @@ class misha_datasets_system(object):
         dataset_init = create_dataset ()
         dataset_init.auto_create_float_matrix_dataset (dataset_info)
 
-    @datasets.command()
+    @click.command()
     @click.option('--file_name', help='Path where the dataset should be created and the file name')
     @click.option('--dataset_size', default=0, help='The size of the dataset')
     @click.option('--min_limit', default=0, help='The start point of generating values')
@@ -69,7 +65,7 @@ class misha_datasets_system(object):
         dataset_init = create_dataset ()
         dataset_init.auto_create_integer_matrix_dataset (dataset_info)
 
-    @datasets.command()
+    @click.command()
     @click.option('--file_name', help='Path where the dataset should be created and the file name')
     @click.option('--dataset_size', default=0, help='The size of the dataset')
     @click.option('--string_length', default=0, help="The size of the words")
@@ -82,7 +78,7 @@ class misha_datasets_system(object):
         dataset_init = create_dataset ()
         dataset_init.auto_create_string_dataset (dataset_info)
 
-    @datasets.command()
+    @click.command()
     @click.option('--file_name', help='Path where the dataset should be created and the file name')
     @click.option('--dataset_size', default=0, help='The size of the dataset')
     def create_linear_dataset (file_name, dataset_size):
@@ -94,7 +90,7 @@ class misha_datasets_system(object):
         dataset_init = create_dataset ()
         dataset_init.create_linear_dataset (dataset_info)
 
-    @datasets.command()
+    @click.command()
     @click.option('--file_name', help='Path where the dataset should be created and the file name')
     @click.option('--dataset_size', default=0, help='The size of the dataset')
     def create_matrix_dataset (file_name, dataset_size):
