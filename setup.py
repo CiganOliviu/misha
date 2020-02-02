@@ -5,3 +5,4 @@ class environment_variables():
 
     misha_datasets_system = True
     misha_servers_system = True
+    misha_compilers_system = True

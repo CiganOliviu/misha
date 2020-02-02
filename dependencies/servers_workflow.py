@@ -34,3 +34,6 @@ class servers_workflow():
 
     def xampp_control(self):
         os.system(self.PATH + "xampp-control")
+
+    def test_php(self):
+        os.system(self.PATH + "test_php.bat")

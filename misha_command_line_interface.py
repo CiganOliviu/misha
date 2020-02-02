@@ -2,6 +2,7 @@ import click
 
 from datasets_cli import misha_datasets_system
 from servers_workflow_cli import misha_servers_system
+from compilers_cli import misha_compilers_system
 
 class misha_command_line_interface_system():
 
@@ -24,4 +25,8 @@ class misha_command_line_interface_system():
 
     def set_servers_cli(self):
         servers_commands = misha_servers_system()
-        self.misha_command_line_interface.add_command(servers_commands.start_server)
+        self.misha_command_line_interface.add_command(servers_commands.manage_server)
+
+    def set_compilers_cli(self):
+        compilers_commands = misha_compilers_system()
+        self.misha_command_line_interface.add_command(compilers_commands.manage_compiler)
