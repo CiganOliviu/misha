@@ -20,11 +20,9 @@ class languagesSetup():
     PYTHON_TWO = True
     PYTHON_THREE = True
     GO = True
-    SWIFT = True
 
-    PYTHON_TWO_PATH = "C:\\Python27amd64 ";
+    PYTHON_TWO_PATH = "C:\\Python27amd64\\python.exe ";
     PYTHON_THREE_PATH = "C:/Users/cigan/AppData/Local/Programs/Python/Python37/python.exe ";
-    SWIFT_PATH = "C:\\Swift\\bin"
 
 class compilers(languagesSetup):
 
@@ -64,6 +62,15 @@ class compilers(languagesSetup):
             os.system("go build " + (file_name) + ".go")
             self.go_run(file_name)
 
-    def swift_compiler(self):
-        if self.SWIFT:
-            os.system(SWIFT_PATH + "Swift for Windows")
+class exe_compilers(languagesSetup):
+
+    def __init__(self):
+        super(exe_compilers, self).__init__()
+
+    def python2_exe(self):
+        if self.PYTHON_TWO:
+            os.system(self.PYTHON_TWO_PATH)
+
+    def python3_exe(self):
+        if self.PYTHON_THREE:
+            os.system(self.PYTHON_THREE_PATH)

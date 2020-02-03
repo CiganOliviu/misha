@@ -30,3 +30,4 @@ class misha_command_line_interface_system():
     def set_compilers_cli(self):
         compilers_commands = misha_compilers_system()
         self.misha_command_line_interface.add_command(compilers_commands.manage_compiler)
+        self.misha_command_line_interface.add_command(compilers_commands.run_compilers_management)
