@@ -1,15 +1,5 @@
 import os
 
-class run_check_sys():
-
-    def __init__(self):
-        super(run_check_sys, self).__init__()
-
-    def check_name (self, name_one, name_two) -> bool:
-        if (name_one == name_two):
-            return True
-        return False
-
 class languagesSetup():
 
     def __init__(self):

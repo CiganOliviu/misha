@@ -3,7 +3,7 @@ import sys
 
 sys.path.insert(0, 'dependencies/')
 
-from dependencies.servers_workflow import servers_workflow, run_check_sys
+from dependencies.servers_workflow import servers_workflow
 
 class misha_servers_system():
 
@@ -11,29 +11,36 @@ class misha_servers_system():
         super(misha_servers_system, self).__init__()
 
     @click.command()
-    @click.option('--process', help='The process you want to start')
-    def manage_server(process):
-
+    def start_apache_server():
         servers = servers_workflow()
-        verification = run_check_sys()
+        servers.start_apache()
 
-        if verification.check_name(process, 'apache'):
-            servers.start_apache()
+    @click.command()
+    def start_mysql_server():
+        servers = servers_workflow()
+        servers.start_mysql()
 
-        if verification.check_name(process, 'mysql'):
-            servers.start_mysql()
+    @click.command()
+    def xampp_start_server():
+        servers = servers_workflow()
+        servers.xampp_start()
 
-        if verification.check_name(process, 'xampp-start'):
-            servers.xampp_start()
+    @click.command()
+    def xampp_stop_server():
+        servers = servers_workflow()
+        servers.xampp_stop()
 
-        if verification.check_name(process, 'xampp-stop'):
-            servers.xampp_stop()
+    @click.command()
+    def xampp_shell_server():
+        servers = servers_workflow()
+        servers.xampp_shell()
 
-        if verification.check_name(process, 'xampp-shell'):
-            servers.xampp_shell()
+    @click.command()
+    def xampp_control_server():
+        servers = servers_workflow()
+        servers.xampp_control()
 
-        if verification.check_name(process, 'xampp-control'):
-            servers.xampp_control()
-
-        if verification.check_name(process, 'test-php'):
-            servers.test_php()
+    @click.command()
+    def test_php_server():
+        servers = servers_workflow()
+        servers.test_php()
