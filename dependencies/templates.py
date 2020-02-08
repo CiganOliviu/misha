@@ -1,9 +1,9 @@
-class templates():
+class init_templates():
 
     def __init__(self):
-        super(templates, self).__init__()
+        super(init_templates, self).__init__()
 
-    def __standard_structure_algo_data_structures_templates(self, file_object):
+    def standard_structure_algo_data_structures_templates(self, file_object):
 
         file_object.write("#include \"dataStructures.hpp\" \n\n")
         file_object.write("int main(int argc, char const *argv[]) {\n\n")
@@ -13,7 +13,7 @@ class templates():
         file_object.write("\treturn 0;\n")
         file_object.write("}")
 
-    def __standard_structure_easyPass_templates(self, file_object):
+    def standard_structure_easyPass_templates(self, file_object):
 
         file_object.write("#include \"easyPass.hpp\" \n\n")
         file_object.write("int main(int argc, char const *argv[]) {\n\n")
@@ -22,7 +22,7 @@ class templates():
         file_object.write("\treturn 0;\n")
         file_object.write("}")
 
-    def __standard_structure_esential_templates (self, file_object):
+    def standard_structure_esential_templates (self, file_object):
 
         file_object.write("#include \"esential.hpp\" \n\n")
         file_object.write("int main(int argc, char const *argv[]) {\n\n")
@@ -32,11 +32,16 @@ class templates():
         file_object.write("\treturn 0;\n")
         file_object.write("}")
 
+class templates(init_templates):
+
+    def __init__(self):
+        super(templates, self).__init__()
+
     def standard_algo_data_structures_templates(self, file_name):
 
         ADS_template = open(file_name, "w")
 
-        self.__standard_structure_algo_data_structures_templates(ADS_template)
+        self.standard_structure_algo_data_structures_templates(ADS_template)
 
         ADS_template.close()
 
@@ -44,7 +49,7 @@ class templates():
 
         EP_template = open(file_name, "w")
 
-        self.__standard_structure_easyPass_templates(EP_template)
+        self.standard_structure_easyPass_templates(EP_template)
 
         EP_template.close()
 
@@ -52,6 +57,6 @@ class templates():
 
         ESE_template = open(file_name, "w")
 
-        self.__standard_structure_esential_templates(ESE_template)
+        self.standard_structure_esential_templates(ESE_template)
 
         ESE_template.close()
