@@ -32,6 +32,9 @@ class init_templates():
         file_object.write("\treturn 0;\n")
         file_object.write("}")
 
+    def standard_misha_script(self, file_object):
+        pass
+
 class templates(init_templates):
 
     def __init__(self):
