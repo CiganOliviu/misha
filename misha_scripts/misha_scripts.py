@@ -14,7 +14,7 @@ def normalize_data(data_set, data_set_workflow) -> list:
 
 	 for values in data:
 		 if values != '':
-			 final_data.append(values)
+			 final_data.append(int(values))
 
 	 return final_data
 
