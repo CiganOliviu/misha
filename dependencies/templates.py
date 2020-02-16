@@ -1,3 +1,5 @@
+import os
+
 class init_templates():
 
     def __init__(self):
@@ -33,7 +35,10 @@ class init_templates():
         file_object.write("}")
 
     def standard_misha_script(self, file_object):
-        pass
+
+        file_object.write("import sys \n\n")
+        file_object.write("sys.path.insert(0, '../dependencies/') \n\n")
+        file_object.write("from misha_scripts_dependencies import misha_scripts_dependencies \n\n")
 
 class templates(init_templates):
 
@@ -63,3 +68,13 @@ class templates(init_templates):
         self.standard_structure_esential_templates(ESE_template)
 
         ESE_template.close()
+
+    def standard_misha_template(self, file_name):
+
+        MISHA_SCRIPTS_PATH = str(os.getcwd()) + "\\misha_scripts\\"
+
+        MISHA_template = open(MISHA_SCRIPTS_PATH + file_name, "w")
+
+        self.standard_misha_script(MISHA_template)
+
+        MISHA_template.close()
