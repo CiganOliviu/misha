@@ -17,7 +17,7 @@ class init_templates():
 
     def standard_structure_c_algo_data_structures_templates(self, file_object):
 
-        file_object.write("#include \"dataStructures.hpp\" \n\n")
+        file_object.write("#include \"dataStructures.h\" \n\n")
         file_object.write("void main(void) {\n\n")
         file_object.write("\tOneDimensionalArrayType ODAObject;\n")
         file_object.write("\tmatrixType MTObject;\n")
