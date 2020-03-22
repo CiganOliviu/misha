@@ -7,6 +7,4 @@ class environment_variables():
 
     workflow_space_path = os.getcwd()
     misha_datasets_system = True
-    misha_servers_system = False
-    misha_compilers_system = False
     misha_templates_system = True
