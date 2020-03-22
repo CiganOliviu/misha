@@ -106,8 +106,3 @@ class templates(init_templates):
         self.standard_misha_script(MISHA_template)
 
         MISHA_template.close()
-
-
-tp = templates()
-
-tp.standard_c_algo_data_structures_templates('main.c')

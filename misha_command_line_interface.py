@@ -2,6 +2,7 @@ import click
 
 from datasets_cli import misha_datasets_system
 from templates_cli import misha_templates_system
+from backup_system_cli import misha_backup_system
 
 class misha_command_line_interface_system():
 
@@ -29,3 +30,8 @@ class misha_command_line_interface_system():
         self.misha_command_line_interface.add_command(templates_commands.standard_easyPass_implementation)
         self.misha_command_line_interface.add_command(templates_commands.standard_esential_implementation)
         self.misha_command_line_interface.add_command(templates_commands.standard_misha_implementation)
+
+    def set_backup_cli(self):
+        backup_commands = misha_backup_system()
+        self.misha_command_line_interface.add_command(backup_commands.backup_sys_data)
+        self.misha_command_line_interface.add_command(backup_commands.clean_sys_backup)
